@@ -7,7 +7,7 @@ public class CPUGraph : Graph
 {
     [Header("Awake Values")]
     [SerializeField]
-    private Transform pointPrefab = default;
+    private ObjectPool pointPool = default;
     [SerializeField]
     private int numberOfPoints = 10;
 
@@ -38,7 +38,7 @@ public class CPUGraph : Graph
     [SerializeField] [Range(0.1f, 1)]
     private float morphingRate = 1;
 
-    Transform[] points;
+    List<GameObject> points;
     Vector3 scale;
     float step;
     float duration;
@@ -63,21 +63,7 @@ public class CPUGraph : Graph
 
     private void SetPoints()
     {
-        if(points != null && points.Length > 0) 
-        {
-            for(int i = 0; i < points.Length; i++) 
-            {
-                Destroy(points[i].gameObject);
-            }
-        }
-
-        points = new Transform[numberOfPoints * numberOfPoints];
-        for (int i = 0; i < points.Length; i++)
-        {
-            Transform point = Instantiate(pointPrefab);
-            point.SetParent(transform, false);
-            points[i] = point;
-        }
+        points = pointPool.GetObjects(numberOfPoints*numberOfPoints);
     }
 
     private void Update()
@@ -124,7 +110,7 @@ public class CPUGraph : Graph
         float time = Time.time;
         step = (2f / numberOfPoints);
         scale = Vector3.one * (step * size);
-        for (int i = 0, x = 0, z = 0; i < points.Length; i++, x++)
+        for (int i = 0, x = 0, z = 0; i < points.Count; i++, x++)
         {
             if (x == numberOfPoints)
             {
@@ -132,7 +118,7 @@ public class CPUGraph : Graph
                 z += 1;
             }
 
-            Transform point = points[i];
+            Transform point = points[i].transform;
             point.localScale = scale;
 
             float u = (x + 0.5f) * step - 1f;
@@ -151,7 +137,7 @@ public class CPUGraph : Graph
         float time = Time.time;
         step = (2f / numberOfPoints);
         scale = Vector3.one * step * size;
-        for (int i = 0, x = 0, z = 0; i < points.Length; i++, x++)
+        for (int i = 0, x = 0, z = 0; i < points.Count; i++, x++)
         {
             if (x == numberOfPoints)
             {
@@ -159,7 +145,7 @@ public class CPUGraph : Graph
                 z += 1;
             }
 
-            Transform point = points[i];
+            Transform point = points[i].transform;
             point.localScale = scale;
 
             float u = (x + 0.5f) * step - 1f;

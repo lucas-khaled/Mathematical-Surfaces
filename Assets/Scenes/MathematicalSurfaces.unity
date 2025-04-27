@@ -5019,6 +5019,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2031278335}
   - component: {fileID: 2031278334}
+  - component: {fileID: 2031278336}
   m_Layer: 0
   m_Name: Graph
   m_TagString: Untagged
@@ -5038,8 +5039,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 637c6ad5d48407142a6895bccf2020ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointPrefab: {fileID: 7638260443388893788, guid: 756f08003c8e92c4d89b04a1019f2815,
-    type: 3}
+  pointPool: {fileID: 2031278336}
   numberOfPoints: 10
   hasTransition: 1
   functionDuration: 3
@@ -5064,6 +5064,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2031278336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2031278333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f72118017022f724eb20a0b2ab268cfd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 6471105972262921266, guid: 756f08003c8e92c4d89b04a1019f2815, type: 3}
 --- !u!1 &2079322449
 GameObject:
   m_ObjectHideFlags: 0
