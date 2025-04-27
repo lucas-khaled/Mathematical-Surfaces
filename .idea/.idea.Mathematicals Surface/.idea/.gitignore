@@ -1,0 +1,13 @@
+﻿# Default ignored files
+/shelf/
+/workspace.xml
+# Rider ignored files
+/projectSettingsUpdater.xml
+/.idea.Mathematicals Surface.iml
+/contentModel.xml
+/modules.xml
+# Datasource local storage ignored files
+/../../../../../../:\Unity\Mathematicals Surface\.idea\.idea.Mathematicals Surface\.idea/dataSources/
+/dataSources.local.xml
+# Editor-based HTTP Client requests
+/httpRequests/
