@@ -110,6 +110,8 @@ public class CPUGraph : Graph
         function = (functionTransition == TransitionMode.CYCLE) ?
             FunctionLibrary.GetNextFunctionType(function) :
             FunctionLibrary.GetRandomFunctionNameOtherThan(function);
+
+        OnFunctionChanged?.Invoke(function);
     }
 
     private void UpdateFunction()
