@@ -17,7 +17,7 @@ public class UIController : MonoBehaviour
     [SerializeField] private TMP_Dropdown functionTransitionDropdown;
 
     [Header("References")]
-    [SerializeField] private GPUGraph graph;
+    [SerializeField] private Graph graph;
 
     private void Awake() 
     {
@@ -30,7 +30,7 @@ public class UIController : MonoBehaviour
         functionDropdown.onValueChanged.AddListener(OnFunctionChangedInUI);
         graph.OnFunctionChanged += OnFunctionChanged;
 
-        SetDropdownOptionsByEnum<GPUGraph.TransitionMode>(functionTransitionDropdown);
+        SetDropdownOptionsByEnum<TransitionMode>(functionTransitionDropdown);
         functionTransitionDropdown.value = (int)graph.FunctionTransition;
         functionTransitionDropdown.onValueChanged.AddListener(OnFunctionTransitionChanged);
 
@@ -70,7 +70,7 @@ public class UIController : MonoBehaviour
 
     private void OnFunctionTransitionChanged(int index)
     {
-        graph.FunctionTransition = (GPUGraph.TransitionMode)index;
+        graph.FunctionTransition = (TransitionMode)index;
     }
 
     private void OnFunctionChangedInUI(int index)

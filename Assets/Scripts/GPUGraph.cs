@@ -4,10 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class GPUGraph : MonoBehaviour
+public class GPUGraph : Graph
 {
-    public enum TransitionMode { CYCLE, RANDOM };
-
     [SerializeField]
     ComputeShader computeShader;
     [SerializeField] [Range(10, maxResolution)]
@@ -31,14 +29,12 @@ public class GPUGraph : MonoBehaviour
     [SerializeField]
     private TransitionMode functionTransition = TransitionMode.CYCLE;
 
-    public int Resolution { get => resolution; set => resolution = value; }
-    public float FunctionDuration { get => functionDuration; set => functionDuration = value; }
-    public float TransitionDuration { get => transitionDuration; set => transitionDuration = value; }
-    public FunctionType FunctionType { get => function; set => function = value; }
-    public TransitionMode FunctionTransition { get => functionTransition; set => functionTransition = value; }
-    public bool HasTransition { get => hasTransition; set => hasTransition = value; }
-
-    public Action<FunctionType> OnFunctionChanged;
+    public override int Resolution { get => resolution; set => resolution = value; }
+    public override float FunctionDuration { get => functionDuration; set => functionDuration = value; }
+    public override float TransitionDuration { get => transitionDuration; set => transitionDuration = value; }
+    public override FunctionType FunctionType { get => function; set => function = value; }
+    public override TransitionMode FunctionTransition { get => functionTransition; set => functionTransition = value; }
+    public override bool HasTransition { get => hasTransition; set => hasTransition = value; }
 
     Vector3 scale;
     float step;
