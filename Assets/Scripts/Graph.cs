@@ -12,6 +12,9 @@ public abstract class Graph : MonoBehaviour
     public abstract float TransitionDuration { get; set; }
     public abstract float FunctionDuration { get; set; }
 
+    public abstract float ResolutionMin { get; }
+    public abstract float ResolutionMax { get; }
+
     public Action<FunctionType> OnFunctionChanged;
 }
 

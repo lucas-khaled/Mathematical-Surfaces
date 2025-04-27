@@ -52,6 +52,10 @@ public class CPUGraph : Graph
     public override float TransitionDuration { get => transitionDuration; set => transitionDuration = value; }
     public override float FunctionDuration { get => functionDuration; set => functionDuration = value; }
 
+    public override float ResolutionMin => 10;
+
+    public override float ResolutionMax => 70;
+
     private void Awake()
     {
         SetPoints();

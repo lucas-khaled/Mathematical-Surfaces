@@ -21,6 +21,8 @@ public class UIController : MonoBehaviour
 
     private void Awake() 
     {
+        resolutionSlider.minValue = graph.ResolutionMin;
+        resolutionSlider.maxValue = graph.ResolutionMax;
         resolutionSlider.value = graph.Resolution;
         resolutionSlider.wholeNumbers = true;
         resolutionSlider.onValueChanged.AddListener(OnResolutionChanged);

@@ -5040,7 +5040,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pointPrefab: {fileID: 7638260443388893788, guid: 756f08003c8e92c4d89b04a1019f2815,
     type: 3}
-  numberOfPoints: 100
+  numberOfPoints: 10
   hasTransition: 1
   functionDuration: 3
   transitionDuration: 1

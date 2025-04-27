@@ -36,6 +36,10 @@ public class GPUGraph : Graph
     public override TransitionMode FunctionTransition { get => functionTransition; set => functionTransition = value; }
     public override bool HasTransition { get => hasTransition; set => hasTransition = value; }
 
+    public override float ResolutionMin => 10;
+
+    public override float ResolutionMax => 700;
+
     Vector3 scale;
     float step;
     float duration;
