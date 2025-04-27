@@ -1123,7 +1123,7 @@ MonoBehaviour:
   transitionDurationInput: {fileID: 870042878}
   functionDuration: {fileID: 553009525}
   functionTransitionDropdown: {fileID: 1226070927}
-  graph: {fileID: 2125612056}
+  graph: {fileID: 2031278334}
 --- !u!1 &409098565
 GameObject:
   m_ObjectHideFlags: 0
@@ -4452,7 +4452,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 40.86, y: -0.3006897}
+  m_AnchoredPosition: {x: 40.86, y: -0.3007202}
   m_SizeDelta: {x: -86.15138, y: -3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1792177382
@@ -5025,7 +5025,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2031278334
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5035,13 +5035,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 2031278333}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2c34c4158974d04dbd3e3110dd7a118, type: 3}
+  m_Script: {fileID: 11500000, guid: 637c6ad5d48407142a6895bccf2020ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   pointPrefab: {fileID: 7638260443388893788, guid: 756f08003c8e92c4d89b04a1019f2815,
     type: 3}
-  numberOfPoints: 50
-  functionDuration: 2
+  numberOfPoints: 100
+  hasTransition: 1
+  functionDuration: 3
   transitionDuration: 1
   function: 0
   functionTransition: 0
@@ -5278,7 +5279,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2125612056
 MonoBehaviour:
   m_ObjectHideFlags: 0

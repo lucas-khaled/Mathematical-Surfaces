@@ -45,7 +45,7 @@ public class CPUGraph : Graph
     bool transitioning = false;
     FunctionType transitioningFunction;
 
-    public override int Resolution { get => numberOfPoints; set => numberOfPoints = value; }
+    public override int Resolution { get => numberOfPoints; set { numberOfPoints = value; SetPoints(); } }
     public override FunctionType FunctionType { get => function; set => function = value; }
     public override TransitionMode FunctionTransition { get => functionTransition; set => functionTransition = value; }
     public override bool HasTransition { get => hasTransition; set => hasTransition = value; }
@@ -54,8 +54,21 @@ public class CPUGraph : Graph
 
     private void Awake()
     {
+        SetPoints();
+    }
+
+    private void SetPoints()
+    {
+        if(points != null && points.Length > 0) 
+        {
+            for(int i = 0; i < points.Length; i++) 
+            {
+                Destroy(points[i].gameObject);
+            }
+        }
+
         points = new Transform[numberOfPoints * numberOfPoints];
-        for(int i = 0; i<points.Length; i++)
+        for (int i = 0; i < points.Length; i++)
         {
             Transform point = Instantiate(pointPrefab);
             point.SetParent(transform, false);
